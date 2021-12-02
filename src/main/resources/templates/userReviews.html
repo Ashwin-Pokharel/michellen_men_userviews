@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+  </head>
+  <body>
+
+      <h1> Hello <span th:text = "${name}"> </span> !!!!! </h1>
+      <p>Here are all of the reviews you have written</p>
+      <div th:if="${ not#lists.isEmpty(recieved_reviews)}">
+        <p>recieved the list</p>
+        <table>
+          <tr>
+            <th>Restaurant</th>
+            <th>Rating</th>
+            <th>Comment</th>
+          </tr>
+          <tr th:each="reviews : ${recieved_reviews}">
+            <td th:text="${reviews.restaurant}"></td>
+            <td th:text="${reviews.rating}"></td>
+            <td th:text="${reviews.comment}"></td>
+          </tr>
+        <table>
+      </div>
+
+      <div>
+        <form action="#" th:action="@{/userDetails}" method="GET" >
+          <input type="hidden" name="" value="" />
+          <button type="submit" id="submitButton">Go back</button>
+        </form>
+      </div>
+
+
+  </body>
+
+</html>

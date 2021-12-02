@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+  </head>
+  <body>
+      <h1> Hello <span th:text = "${name}"> </span> !!!!! </h1>
+        <p> Your email is: <span th:text = "${email}"></span> </p>
+        <p> Your phone number is:<span th:text = "${phoneNumber}"></span> </p>
+        <p> Your bio is: <span th:text = "${bio}"></span> </p>
+        <p> Use this to update your bio</p>
+        <form action="#" th:action="@{/modifyUser}" th:object="${updateBioForm}" method="POST">
+          <input type="text" th:field="*{bio}" th:value="${bio}">
+          <input type="submit" value="Update bio">
+      </form>
+
+    <div>
+      <form action="#" th:action="@{/userReviews}" method="GET" >
+        <input type="hidden" name="" value="" />
+        <button type="submit" id="submitButton"> See all Reviews </button>
+      </form>
+    </div>
+
+    <div>
+      <form action="#" th:action="@{/logout}" method="POST" >
+        <input type="hidden" name="" value="" />
+        <button type="submit" id="submitButton"> logout </button>
+      </form>
+    </div>
+
+  </body>
+
+</html>

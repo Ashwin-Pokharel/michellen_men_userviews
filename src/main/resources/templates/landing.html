@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+  </head>
+  <body>
+      <h1 th:text = "${message}"> </h1>
+  </body>
+
+
+  <div>
+    <form action="#" th:action="@{/login}" method="GET" >
+      <input type="hidden" name="" value="" />
+      <button type="submit" id="submitButton"> Login </button>
+    </form>
+  </div>
+
+  <div>
+    <form action="#" th:action="@{/register}" method="GET" >
+      <input type="hidden" name="" value="" />
+      <button type="submit" id="submitButton"> Register</button>
+    </form>
+  </div>
+
+</html>

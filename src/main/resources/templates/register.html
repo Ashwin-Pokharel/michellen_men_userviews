@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+  </head>
+  <body>
+      <h1 th:text = "${message}"> </h1>
+      <form action="#" th:action="@{/addNewUser}" th:object="${RegisterForm}" method="POST">
+            <div>
+                <label for="email">email</label>
+                <input type="text" name="email" id="email" th:field="*{email}">
+            </div>
+            <div>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" th:field="*{username}" />
+            </div>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" th:field="*{name}" />
+            </div>
+            <div>
+                <label for="phoneNumer">Phone Number</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" th:field="*{phoneNumber}" />
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" th:field="*{password}" />
+            </div>
+            <div>
+                <input type="submit" value="Register"/>
+              </div>
+
+      </form>
+  </body>
+</html>
